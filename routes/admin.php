@@ -10,8 +10,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::post('login', [AdminAuthenticationController::class, 'handleLogin'])->name('handle-login');
     Route::post('logout', [AdminAuthenticationController::class, 'logout'])->name('logout');
 
-
-
     /* Reset Password */
     Route::get('forgot-password', [AdminAuthenticationController::class, 'forgotPassword'])->name('forgot-password');
     Route::post('forgot-password', [AdminAuthenticationController::class, 'sendResetLink'])->name('forgot-password.send');
@@ -22,6 +20,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'); //admin.dashboard
     // /Profile/
+    Route::put('profile-password-update/{id}', [ProfileController::class, 'passwordUpdate'])->name('profile-password.update');
     Route::resource('profile', ProfileController::class); //admin.dashboard
-
 });
