@@ -33,7 +33,7 @@
                     <tbody>
                         @foreach ($languages as $index => $language)
                             <tr>
-                                <td class="text-center">{{ $index + 1 }}</td>
+                                <td>{{ $index + 1 }}</td>
                                 <td>{{ $language->name }}</td>
                                 <td>{{ $language->lang }}</td>
                                 <td>
