@@ -26,4 +26,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
 
     /** Language Route */
     Route::resource('language', LanguageController::class);
+    Route::resource('language2', LanguageController::class);
 });
