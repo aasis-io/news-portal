@@ -74,6 +74,7 @@
                 "sortable": false,
                 "targets": [2, 3]
             }]
+            "bDestroy": true,
         });
     </script>
 @endpush
