@@ -20,5 +20,6 @@ class Admin
             return redirect()->route('admin.login')->with('error', 'Please login first');
         }
         return $next($request);
+        kjsdf;sdn
     }
 }
