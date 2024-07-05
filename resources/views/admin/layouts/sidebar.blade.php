@@ -48,6 +48,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i>
                     <span>News</span></a>
                 <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.news.create') }}">Create News</a></li>
                     <li><a class="nav-link" href="{{ route('admin.news.index') }}">Manage News</a></li>
                 </ul>
             </li>

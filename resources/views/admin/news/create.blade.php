@@ -11,7 +11,7 @@
             <h4>{{ __('Create News') }}</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.news.store') }}" method="POST">
+            <form action="{{ route('admin.news.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="">{{ 'Language' }}</label>
@@ -40,7 +40,7 @@
                 <div class="form-group">
                     <label for="">{{ __('Image') }}</label>
                     <div id="image-preview" class="image-preview">
-                        <label for="image-upload" id="image-label">Choose File</label>
+                        <label for="image-upload" id="image-label">{{ __('Choose File') }}</label>
                         <input type="file" name="image" id="image-upload">
                     </div>
                     @error('image')
@@ -63,6 +63,13 @@
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
+                <div class="form-group">
+                    <label>{{ __('Tags') }}</label>
+                    <input name="tags" type="text" class="form-control inputtags">
+                    @error('tags')
+                        <p class="text-danger">{{ $message }}</p>
+                    @enderror
+                </div>
 
                 <div class="form-group">
                     <label for="">{{ __('Meta Title') }}</label>
@@ -79,12 +86,13 @@
                     @enderror
                 </div>
 
+
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                             <div class="control-label">{{ __('Status') }}</div>
                             <label class="custom-switch mt-2">
-                                <input type="checkbox" name="status" class="custom-switch-input">
+                                <input value="1" type="checkbox" name="status" class="custom-switch-input">
                                 <span class="custom-switch-indicator"></span>
                             </label>
                         </div>
@@ -93,7 +101,7 @@
                         <div class="form-group">
                             <div class="control-label">{{ __('Is Breaking News') }}</div>
                             <label class="custom-switch mt-2">
-                                <input type="checkbox" name="is_breaking_news" class="custom-switch-input">
+                                <input value="1" type="checkbox" name="is_breaking_news" class="custom-switch-input">
                                 <span class="custom-switch-indicator"></span>
                             </label>
                         </div>
@@ -102,7 +110,7 @@
                         <div class="form-group">
                             <div class="control-label">{{ __('Show At Slider') }}</div>
                             <label class="custom-switch mt-2">
-                                <input type="checkbox" name="show_at_slider" class="custom-switch-input">
+                                <input value="1" type="checkbox" name="show_at_slider" class="custom-switch-input">
                                 <span class="custom-switch-indicator"></span>
                             </label>
                         </div>
@@ -111,7 +119,7 @@
                         <div class="form-group">
                             <div class="control-label">{{ __('Show At Popular') }}</div>
                             <label class="custom-switch mt-2">
-                                <input type="checkbox" name="show_at_popular" class="custom-switch-input">
+                                <input value="1" type="checkbox" name="show_at_popular" class="custom-switch-input">
                                 <span class="custom-switch-indicator"></span>
                             </label>
                         </div>
