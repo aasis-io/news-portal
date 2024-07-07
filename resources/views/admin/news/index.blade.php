@@ -27,11 +27,9 @@
 
                 </ul>
                 <div class="tab-content" id="myTabContent2">
-                    {{-- @foreach ($languages as $language)
+                    @foreach ($languages as $language)
                         @php
-                            $categories = \App\Models\Category::where('language', $language->lang)
-                                ->orderByDesc('id')
-                                ->get();
+                            $news = \App\Models\News::where('language', $language->lang)->orderBy('id', 'DESC')->get();
                         @endphp
                         <div class="tab-pane fade show {{ $loop->index == 0 ? 'active' : '' }}"
                             id="home-{{ $language->lang }}" role="tabpanel" aria-labelledby="home-tab3">
@@ -43,9 +41,12 @@
                                                 <th class="text-center">
                                                     #
                                                 </th>
+                                                <th>{{ __('Image') }}</th>
                                                 <th>{{ __('Name') }}</th>
-                                                <th>{{ __('Language') }}</th>
-                                                <th>{{ __('Show At Nav') }}</th>
+                                                <th>{{ __('Category') }}</th>
+                                                <th>{{ __('In Breaking') }}</th>
+                                                <th>{{ __('In Slider') }}</th>
+                                                <th>{{ __('In Popular') }}</th>
                                                 <th>{{ __('Status') }}</th>
                                                 <th>{{ __('Action') }}</th>
                                             </tr>
@@ -86,7 +87,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach --}}
+                    @endforeach
                 </div>
             </div>
         </div>
