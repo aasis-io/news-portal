@@ -88,11 +88,19 @@ class NewsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Change toggle status of fields.
      */
-    public function show(string $id)
+    public function toggleNewsStatus(Request $request)
     {
-        //
+        try {
+            $news = News::findOrFail($request->id);
+            $news->{$request->name} = $request->status;
+            $news->save();
+
+            return response(['status' => 'success', 'message' => __('Updated Successfully!')]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
