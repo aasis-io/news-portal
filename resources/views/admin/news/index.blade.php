@@ -44,7 +44,7 @@
                                                 <th class="text-center">
                                                     #
                                                 </th>
-                                                <th>{{ __('Image') }}</th>
+                                                <th>{{ __('Images') }}</th>
                                                 <th>{{ __('Title') }}</th>
                                                 <th>{{ __('Category') }}</th>
                                                 <th>{{ __('Is Breaking') }}</th>
