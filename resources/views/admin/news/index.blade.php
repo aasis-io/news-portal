@@ -44,7 +44,7 @@
                                                 <th class="text-center">
                                                     #
                                                 </th>
-                                                <th>{{ __('Images') }}</th>
+                                                <th>{{ __('Image') }}</th>
                                                 <th>{{ __('Title') }}</th>
                                                 <th>{{ __('Category') }}</th>
                                                 <th>{{ __('Is Breaking') }}</th>
@@ -101,10 +101,10 @@
                                                         </label>
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('admin.category.edit', $item->id) }}"
+                                                        <a href="{{ route('admin.news.edit', $item->id) }}"
                                                             class="btn btn-primary"><i class="far fa-edit"></i>
                                                             {{ __('Edit') }}</a>
-                                                        <a href="{{ route('admin.category.destroy', $item->id) }}"
+                                                        <a href="{{ route('admin.news.destroy', $item->id) }}"
                                                             class="btn btn-danger delete-item"><i
                                                                 class="far fa-trash-alt"></i>
                                                             {{ __('Delete') }}</a>
