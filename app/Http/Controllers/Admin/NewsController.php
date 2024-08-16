@@ -148,12 +148,12 @@ class NewsController extends Controller
 
         /**
          * Delete previous tags
-        */
+         */
         $news->tags()->delete();
 
         /**
          * Detach tags from pivot table
-        */
+         */
         $news->tags()->detach($news->tags);
 
         foreach ($tags as $tag) {
@@ -174,6 +174,10 @@ class NewsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $news = News::findOrFail($id);
+        $this->deleteFile($news->image);
+        $news->tags()->delete();
+        $news->delete();
+        return response(['status' => 'success', 'message' => __('Deleted Successfully')]);
     }
 }

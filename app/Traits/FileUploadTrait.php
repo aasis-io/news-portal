@@ -29,4 +29,15 @@ trait FileUploadTrait
 
         return $filePath;
     }
+
+    /**
+     * Handle File Delete
+     */
+
+    public function deleteFile(string $path): void {
+         // Delete the image
+         if ($path && File::exists(public_path($path))) {
+            File::delete(public_path($path));
+        }
+    }
 }
