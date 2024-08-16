@@ -180,4 +180,18 @@ class NewsController extends Controller
         $news->delete();
         return response(['status' => 'success', 'message' => __('Deleted Successfully')]);
     }
+
+    /**
+     * Copy News
+     */
+
+    public function copynews(string $id)
+    {
+        $news = News::findOrFail($id);
+        $copyNews = $news->replicate();
+
+        $copyNews->save();
+        toast(__('News copied successfully!'), 'success')->width('400');
+        return redirect()->back();
+    }
 }

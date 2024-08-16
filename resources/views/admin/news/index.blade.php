@@ -108,6 +108,9 @@
                                                             class="btn btn-danger delete-item"><i
                                                                 class="far fa-trash-alt"></i>
                                                             {{ __('Delete') }}</a>
+                                                        <a href="{{ route('admin.news-copy', $item->id) }}"
+                                                            class="btn btn-info"><i class="fa fa-copy"></i>
+                                                            {{ __('Clone') }}</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
